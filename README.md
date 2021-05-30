@@ -1,1 +1,5 @@
+![alt text](https://github.com/aozkan9/Plant_Information_System_JavaFx/blob/main/home.png?raw=true)
 ![alt text](https://github.com/aozkan9/Plant_Information_System_JavaFx/blob/main/bbs1.png?raw=true)
+![alt text](https://github.com/aozkan9/Plant_Information_System_JavaFx/blob/main/bbs2.png?raw=true)
+![alt text](https://github.com/aozkan9/Plant_Information_System_JavaFx/blob/main/bbs3.png?raw=true)
+![alt text](https://github.com/aozkan9/Plant_Information_System_JavaFx/blob/main/bbs4.png?raw=true)
