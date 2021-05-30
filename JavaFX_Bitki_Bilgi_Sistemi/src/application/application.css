@@ -1,0 +1,243 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.background{
+	-fx-background-color: #E8EBEE;
+		-fx-border-width: 0 0 3 0;
+}
+.background2{
+	
+-fx-background-color: 	#F7F7F7;
+}
+
+
+
+
+
+.select{
+	
+	-fx-background-color: #8ECA8B;
+}
+.select:hover{
+		
+		-fx-border-width: 1;
+	
+	-fx-background-color: #A2CB9E;
+}
+
+
+
+
+
+
+
+/*scrollbar  */
+.background2:pannable:fitToWidth{
+	-fx-background-color: transparan;
+	
+}
+.background2:pannable:fitToWidth .viewport{
+	-fx-background-color: transparan;
+}
+.background2:pannable:fitToWidth .scroll-bar:vertical{
+	
+		-fx-background-color: transparan;
+	
+}
+.background2:pannable:fitToWidth .scroll-bar:vertical .increment-button .increment-arrow{
+			-fx-background-color: transparan;
+	
+}
+.background2:pannable:fitToWidth .scroll-bar:vertical .increment-button {
+			-fx-background-color: transparan;
+	
+}
+.background2:pannable:fitToWidth .scroll-bar:vertical .decrement-button .decrement-arrow{
+		-fx-background-color: transparan;
+}
+.background2:pannable:fitToWidth .scroll-bar:vertical .decrement-button{
+		-fx-background-color: transparan;
+}
+.background2:pannable:fitToWidth .scroll-bar:vertical .thumb{
+	-fx-background-color: #2ed573;
+	-fx-background-insets: 0 5 0 5;
+	
+}
+.background2:pannable:fitToWidth{
+	-fx-background-color: transparan;
+	
+}
+.background2:pannable:fitToWidth .viewport{
+	-fx-background-color: transparan;
+}
+.background2:pannable:fitToWidth .scroll-bar:horizontal{
+	
+		-fx-background-color: transparan;
+	
+}
+.background2:pannable:fitToWidth .scroll-bar:horizontal .increment-button .increment-arrow{
+			-fx-background-color: transparan;
+	
+}
+.background2:pannable:fitToWidth .scroll-bar:horizontal .increment-button {
+			-fx-background-color: transparan;
+	
+}
+.background2:pannable:fitToWidth .scroll-bar:horizontal .decrement-button .decrement-arrow{
+		-fx-background-color: transparan;
+}
+.background2:pannable:fitToWidth .scroll-bar:horizontal .decrement-button{
+		-fx-background-color: transparan;
+}
+.background2:pannable:fitToWidth .scroll-bar:horizontal .thumb{
+	-fx-background-color: #2ed573;
+	-fx-background-insets: 5 0 5 0;
+	
+}
+
+
+
+
+.table-view:row-selection .column-header-background .nested-column-header .table-column:last-visible .label .text{
+	-fx-fill : FFF ;
+	
+}
+.table-view:row-selection .column-header-background .nested-column-header .table-column:last-visible .label {
+	-fx-font-size : 16px;
+			-fx-background-color: #8ECA8B ;
+	
+}
+
+.table-view:row-selection .placeholder .label .text{
+	
+	-fx-fill :#2ed573;
+}
+.table-view:row-selection .placeholder .label{
+		-fx-background-color:#F7F7F7 ;
+	
+}
+.table-view:row-selection .placeholder{
+		-fx-background-color:#F7F7F7 ;
+}
+.table-view{
+			-fx-background-color:transparan ;
+}
+.table-view:focused{
+				-fx-background-color:#000 ;
+	
+}
+.table-view:row-selection{			-fx-background-color:transparan ;
+}
+
+.table-view:row-selection .virtual-flow .scroll-bar:vertical .increment-button .increment-arrow{
+			-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:vertical .decrement-button .decrement-arrow{
+			-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:vertical .increment-button{
+			-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:vertical .decrement-button{
+			-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:vertical{
+				-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:vertical .thumb{
+					-fx-background-color: #2ed573;
+	-fx-background-insets: 0 5 0 5;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:horizontal .increment-button .increment-arrow{
+			-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:horizontal .decrement-button .decrement-arrow{
+			-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:horizontal .increment-button{
+			-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:horizontal .decrement-button{
+			-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:horizontal{
+				-fx-background-color: #F7F7F7;
+}
+.table-view:row-selection .virtual-flow .scroll-bar:horizontal .thumb{
+					-fx-background-color: #F7F7F7;
+	-fx-background-insets: 1 0 1 0;
+}
+
+
+
+
+
+
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:90px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: #e6e6e6;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color:  #8ECA8B;
+}
+
+.tab .tab-label{
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}
+
+
+/* tab layaout text */
+
+.tab-layout-text{
+	
+	-fx-background-radius : 17;
+	-fx-background-color :#8ECA8B;
+	-fx-fill : #000;
+
+}
+
+.btnAdmin{
+	-fx-background-radius :20;
+	-fx-border-radius : 20;
+	
+}
+.btnInsert{
+	-fx-border-color :  #8eca8b;
+}
+.btnUpdate{
+		-fx-border-color :  #1c8997;
+}
+.btnDelete{
+	-fx-border-color :  #a80606;
+}
+.btnClear{
+	-fx-border-color :  #8b9a04;
+}
+.btnShow{
+		-fx-border-color :  #2c6dae;
+	
+}

@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="650.0" minWidth="950.0" prefHeight="650.0" prefWidth="950.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PlantNameController">
+   <children>
+      <HBox prefHeight="600.0" prefWidth="850.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox maxWidth="225.0" minWidth="225.0" prefWidth="225.0" style="-fx-background-color: #8ECA8B;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label minWidth="220.0" prefWidth="220.0" text="Bitki Bilgi Sistemi" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="39.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                     <image>
+                        <Image url="@../images/gif.gif" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport></ImageView>
+                  <TextField fx:id="txt_field_bitki_search" promptText="Bitki Arama">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextField>
+                  <Button fx:id="btn_plantShow" mnemonicParsing="false" onAction="#btn_plantShowClick" prefWidth="226.0" text="Seçili Bitkiyi Göster">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="tableView_PlantName" maxWidth="225.0" minWidth="225.0" onKeyPressed="#tableViewClick" prefWidth="225.0">
+                    <columns>
+                      <TableColumn fx:id="plantName" minWidth="225.0" prefWidth="225.0" resizable="false" text="Bitkiler" />
+                        <TableColumn fx:id="plant_IDCol" editable="false" prefWidth="75.0" text="ID" visible="false" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox prefHeight="400.0" prefWidth="487.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" minHeight="100.0" minWidth="615.0" prefHeight="100.0" prefWidth="615.0" style="-fx-background-color: #F7F7F7;">
+                     <children>
+                        <ImageView fx:id="btn_back" fitHeight="24.0" fitWidth="24.0" onMouseClicked="#btn_backClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/back.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="txt_plant_title" text="Bitki ismi" textFill="#269008">
+                           <font>
+                              <Font name="Bell MT" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin></Label>
+                     </children>
+                  </HBox>
+                  <TabPane tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="Genel">
+                           <content>
+                              <AnchorPane prefHeight="650.0" prefWidth="700.0">
+                                 <children>
+                                    <VBox prefWidth="615.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                             <content>
+                                                <VBox>
+                                                   <children>
+                                                      <HBox styleClass="nonSelection">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Latince İsmi" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="txt_latinName" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox styleClass="nonSelection">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Türkçe İsimleri" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="txt_turkce" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true" HBox.hgrow="ALWAYS">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox styleClass="nonSelection">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Büyüme Formu " textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="txt_buyume_formu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox styleClass="nonSelection">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Anavatanı" textFill="WHITE">
+                                                               <HBox.margin>
+                                                                  <Insets />
+                                                               </HBox.margin>
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="txt_anavatani" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox styleClass="nonSelection">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Yetiştiği Bölge" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="txt_yetistigi_bolge" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox styleClass="nonSelection">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Ailesi" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="txt_ailesi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <HBox styleClass="nonSelection">
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                         <children>
+                                                            <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Notlar" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="txt_genel_notlar" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                               <HBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Habitus">
+                           <content>
+                              <VBox prefWidth="615.0">
+                                 <children>
+                                    <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                       <content>
+                                          <VBox maxWidth="1.7976931348623157E308">
+                                             <children>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Şekli" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_habitus_sekli" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Boyu" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_habitus_boyu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Çapı" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_habitus_capi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Dokusu" textFill="WHITE">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_habitus_dokusu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Notlar" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_habitus_notlar" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab text="Çiçek">
+                           <content>
+                              <VBox prefWidth="615.0">
+                                 <children>
+                                    <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                       <content>
+                                          <VBox maxWidth="1.7976931348623157E308">
+                                             <children>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Çiçek Durumu" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_cicek_durumu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Büyüklüğü" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_cicek_buyuklugu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Kokusu" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_cicek_kokusu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Rengi" textFill="WHITE">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_cicek_rengi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Çiçeklenme Vakti" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_ciceklenme_vakti" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Notlar" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="txt_cicek_notlar" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content></ScrollPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab text="Yaprak">
+                           <content>
+                              <VBox prefWidth="615.0">
+                                 <children>
+                                    <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS">
+                                       <content>
+                                          <VBox>
+                                             <children>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Yaprak Dökme" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_dokme" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Tipi" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_tipi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Şekli" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_sekli" maxWidth="1.7976931348623157E308" text="Bilgi Yok " wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Büyüklüğü" textFill="WHITE">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_buyuklugu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Kokusu" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_kokusu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Dokusu" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_dokusu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Rengi" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_rengi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Güz Rengi" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_guz_rengi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox styleClass="nonSelection">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <children>
+                                                      <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Notlar" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="txt_yaprak_notlar" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab text="Meyve">
+                           <content>
+                              <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS">
+                                 <content>
+                                    <VBox maxWidth="1.7976931348623157E308">
+                                       <children>
+                                          <HBox styleClass="nonSelection">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <children>
+                                                <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Meyve Durumu" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="txt_meyve_durumu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox styleClass="nonSelection">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <children>
+                                                <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Meyve Tipi" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="txt_meyve_tipi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox styleClass="nonSelection">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <children>
+                                                <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Büyüklüğü" textFill="WHITE">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="txt_meyve_buyuklugu" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox styleClass="nonSelection">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <children>
+                                                <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Meyve Rengi" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="txt_meyve_rengi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox styleClass="nonSelection">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <children>
+                                                <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Yenilebilirliği" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="txt_meyve_yenilebilirligi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox styleClass="nonSelection">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <children>
+                                                <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Meyve Zamanı" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="txt_meyve_zamani" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Kullanım Alanları">
+                           <content>
+                              <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS">
+                                 <content>
+                              <VBox maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Kırsal" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_kirsal" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Kentsel" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_kentsel" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Diğer" textFill="WHITE">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_diger" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Peyzaj Tarzı" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_peyzaj_tarzi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Kullanıma İlişkin Notlar" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_kullanima_iliskin_notlar" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                            </content>
+                              </ScrollPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Kullanım Amacı">
+                           <content>
+                              <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS">
+                                 <content>
+                              <VBox maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Mühendislik İşlevleri" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_muhendislik" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Mimarlık İşlevleri" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_mimarlik" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Ek Özellikler" textFill="WHITE">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_ek_ozellikler" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                              </ScrollPane>
+                           </content>
+                        
+                        </Tab>
+                        <Tab text="Yetişme İsteği">
+                           
+                           <content>
+                              <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS">
+                                 <content>
+                              <VBox maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Günışığı İsteği" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_gun_isigi_istegi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Su İsteği" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_su_istegi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Besin Gereksinimi" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_besin_gereksinimi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Toprak İsteği" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_toprak_istegi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Toprak Drenajı" textFill="WHITE">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_toprak_drenaji" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                        
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        
+                        </Tab>
+                        <Tab text="Diğer Bilgiler">
+                          
+                           <content>
+                              <ScrollPane fitToWidth="true" pannable="true" styleClass="background2" vbarPolicy="ALWAYS">
+                                 <content>
+
+                              <VBox maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Büyüme Hızı" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_buyume_hizi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Bakım İhtiyacı" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_bakim_ihtiyaci" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Zehirlilik" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_zehirlilik" maxWidth="1.7976931348623157E308" text="Bilgi Yok" textFill="#34404f" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox styleClass="nonSelection">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <children>
+                                          <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Üretimi" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="txt_uretimi" maxWidth="1.7976931348623157E308" text="Bilgi Yok" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                            </content>
+                              </ScrollPane>
+                           </content>
+                        
+                        </Tab>
+                     </tabs>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TabPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" minHeight="600.0" minWidth="950.0" prefHeight="650.0" prefWidth="700.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InfoController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="btn_back" fitHeight="24.0" fitWidth="24.0" onMouseClicked="#btn_backClick" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+               <image>
+                  <Image url="@../images/back.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="65.0" top="55.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+      <ImageView fitHeight="193.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/user.png" />
+         </image>
+      </ImageView>
+      <Label text="Ahmet ÖZKAN">
+         <font>
+            <Font size="29.0" />
+         </font></Label>
+      <Label text="182523061">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="github" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#githubClick" pickOnBounds="true" preserveRatio="true" styleClass="github">
+               <image>
+                  <Image url="@../images/gıthub-ıconpng.png" />
+               </image>
+            </ImageView>
+            <Hyperlink onAction="#github_hyper" text="github.com/aozkan9" />
+            <ImageView fx:id="linkedin" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#linkedinClick" pickOnBounds="true" preserveRatio="true" styleClass="linkedin">
+               <image>
+                  <Image url="@../images/linkedin-logo.png" />
+               </image>
+            </ImageView>
+            <Hyperlink onAction="#linkedin_hyper" text="linkedin.com/in/ahmet-ozkan" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="İskenderun Teknik Üniversitesi">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="43.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/iste_arma.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER" minWidth="362.0" prefHeight="23.0" prefWidth="362.0" styleClass="nonSelection">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Fakülte : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="txt_latinName1" maxWidth="1.7976931348623157E308" text="Mühendslik Ve Doğa Bilimleri Fakültesi" textFill="#34404f" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="362.0" styleClass="nonSelection">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Bölüm : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="txt_latinName" maxWidth="1.7976931348623157E308" text="Bilgisayar Mühendisliği (iö)" textFill="#34404f" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="75.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" minWidth="362.0" prefWidth="362.0" styleClass="nonSelection">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Ders : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="22.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="txt_latinName2" maxWidth="1.7976931348623157E308" text="Nesne Tabanlı Proğramlama Uygulamaları" textFill="#34404f" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" minWidth="362.0" styleClass="nonSelection">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Dönem :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_latinName21" maxWidth="1.7976931348623157E308" text="2020/2021 (Bahar)" textFill="#34404f" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="120.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="362.0" styleClass="nonSelection">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Label alignment="CENTER" minWidth="100.0" styleClass="tab-layout-text" text="Öğretim Üyesi :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_latinName211" maxWidth="1.7976931348623157E308" text="Dr. Öğr. Üyesi Gökhan ALTAN" textFill="#34404f" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="58.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>
