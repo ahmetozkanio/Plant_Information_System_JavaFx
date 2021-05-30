@@ -33,11 +33,6 @@
          <font>
             <Font size="29.0" />
          </font></Label>
-      <Label text="182523061">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
             <ImageView fx:id="github" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#githubClick" pickOnBounds="true" preserveRatio="true" styleClass="github">
